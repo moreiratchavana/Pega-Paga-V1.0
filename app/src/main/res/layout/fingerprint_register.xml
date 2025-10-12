@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Horizontal Scroll -->
+    <HorizontalScrollView
+        android:id="@+id/hScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ========== SEÇÃO 1 (sua tela fingerprint) ========== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <ImageView
+                    android:id="@+id/fingerprintIcon"
+                    android:layout_width="67dp"
+                    android:layout_height="49dp"
+                    android:contentDescription="Fingerprint icon"
+                    android:src="@drawable/ic_fingerprint"
+                    app:tint="#1B1A1A" />
+
+                <TextView
+                    android:id="@+id/instructionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Cadastre sua impressão digital em um agente"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/secondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:maxLines="4"
+                    android:text="Dirija-se até um dos nossos agentes mais próximos de si e cadastre a sua impressão digital para começar a fazer pagamentos usando apenas o dedo."
+                    android:textColor="#888888"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/registerButton"
+                    android:layout_width="150dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/holo_blue_light"
+                    android:text="Saiba mais"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <!-- ========== SEÇÕES 2..5 (exemplos) ========== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+                <ImageView
+                    android:id="@+id/fingerprintIcon1"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/ic_image1"
+                     />
+
+                <TextView
+                    android:id="@+id/instructionText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Boas-vindas!"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/secondaryText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Sua conta está ativa. Você já pode usar as seguintes funções: Depósitos, transferências PegaPaga, cadastro de cartões e saques. Não se esqueça de ativar a biometria para agilizar seus pagamentos!"
+                    android:textColor="#888888"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+                <ImageView
+                    android:id="@+id/fingerprintIcon2"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/ic_image2"
+                    />
+
+                <TextView
+                    android:id="@+id/instructionText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Quase lá!"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Para garantir a segurança total da sua conta PegaPaga e ativar os pagamentos biométricos, por favor, dirija-se ao agente PegaPaga mais próximo de si. Lá você finalizará o seu cadastro biométrico e terá acesso a todas as funcionalidades sem restrições."
+                    android:textColor="#888888"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <ImageView
+                    android:id="@+id/fingerprintIcon3"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/ic_image7"
+                    />
+
+                <TextView
+                    android:id="@+id/instructionText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Legítimo!"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Para sua maior segurança solicitaremos que exiba as suas mãos antes de usar o nosso POs."
+                    android:textColor="#888888"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+                <ImageView
+                    android:id="@+id/fingerprintIcon4"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/ic_image6"
+                    />
+
+                <TextView
+                    android:id="@+id/instructionText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Fantástico!"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Use em qualquer lugar! Pague em 3 segundos, rápido e seguro."
+                    android:textColor="#888888"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Pontinhos -->
+    <LinearLayout
+        android:id="@+id/dotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <View android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/dot_inactive" android:layout_margin="6dp"/>
+        <View android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/dot_inactive" android:layout_margin="6dp"/>
+        <View android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/dot_inactive" android:layout_margin="6dp"/>
+        <View android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/dot_inactive" android:layout_margin="6dp"/>
+        <View android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/dot_inactive" android:layout_margin="6dp"/>
+    </LinearLayout>
+
+</LinearLayout>

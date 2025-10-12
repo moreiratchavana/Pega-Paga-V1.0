@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="32dp"
+    tools:context=".CreatAccountActivity">
+
+    <!-- Título Principal "Criar Conta" (Estilo da Home - Tipografia Forte) -->
+
+    <!-- Subtítulo / Instrução -->
+    <TextView
+        android:id="@+id/createAccountText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Criar Conta"
+        android:textColor="@android:color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Preencha seus dados para começar."
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/createAccountText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- Campo: Nome Completo (Usando TextInputLayout moderno) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_full_name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nome completo"
+
+        app:boxStrokeColor="#4285F4"
+        app:hintTextColor="#4285F4"
+        app:layout_constraintTop_toBottomOf="@id/text_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullNameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo: Telefone -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_phone_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Telefone"
+
+        app:boxStrokeColor="#4285F4"
+        app:hintTextColor="#4285F4"
+        app:layout_constraintTop_toBottomOf="@id/input_full_name_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo: PIN -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_pin_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="PIN (4 dígitos)"
+
+        app:boxStrokeColor="#4285F4"
+        app:hintTextColor="#4285F4"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/input_phone_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pinField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo: Confirmar PIN -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_confirm_pin_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Confirmar PIN"
+
+        app:boxStrokeColor="#4285F4"
+        app:hintTextColor="#4285F4"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/input_pin_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPinField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Checkbox de Termos (Foco na Biometria) -->
+    <!-- Checkbox azul para consistência -->
+
+    <!-- Botão "Concluir Cadastro" (Estilo azul arredondado da Home) -->
+
+    <CheckBox
+        android:id="@+id/termsCheckbox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Aceito os Termos e Condições, incluindo o uso de Biometria para login e transações."
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:buttonTint="#4285F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_confirm_pin_layout" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4285F4"
+        android:text="CONCLUIR CADASTRO"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/termsCheckbox"
+        app:layout_constraintVertical_bias="0.465" />  <!-- Azul primário -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

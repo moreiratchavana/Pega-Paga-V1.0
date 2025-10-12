@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".CardActivity">
+
+    <!-- Scroll View para o conteúdo principal, permitindo scrollar os campos de formulário -->
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        android:paddingBottom="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Adicionar Cartão"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/text_subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Crédito ou Débito"
+                android:textSize="16sp"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/text_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp" />
+
+            <!-- Campo: Número do Cartão -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_card_number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Número do Cartão"
+                app:startIconDrawable="@drawable/ic_card"
+                app:layout_constraintTop_toBottomOf="@id/text_subtitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp">
+
+                <EditText
+                    android:id="@+id/card_number_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="19"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Campo: Nome no Cartão -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_card_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Nome no Cartão"
+                app:layout_constraintTop_toBottomOf="@id/input_card_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp">
+
+                <EditText
+                    android:id="@+id/card_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Campo: Validade (55% da largura) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_card_expiry"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Validade (MM/AA)"
+                app:layout_constraintTop_toBottomOf="@id/input_card_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/input_card_cvv"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintHorizontal_weight="55"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp">
+
+                <EditText
+                    android:id="@+id/card_expiry_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:maxLength="5"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Campo: CVV (45% da largura, ajustado para espaçamento) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_card_cvv"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="CVV"
+                app:layout_constraintTop_toTopOf="@id/input_card_expiry"
+                app:layout_constraintStart_toEndOf="@id/input_card_expiry"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="45"
+                android:layout_marginStart="8dp">
+
+                <EditText
+                    android:id="@+id/card_cvv_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_flags"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                app:layout_constraintTop_toBottomOf="@id/input_card_cvv"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="48dp"
+                app:layout_constraintBottom_toTopOf="@id/button_register_card">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_visa"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Bandeira Visa"
+                    android:layout_marginEnd="8dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_mastercard"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Bandeira Mastercard" />
+            </LinearLayout>
+
+            <!-- Botão de Cadastro fixado no final do Scroll View -->
+            <Button
+                android:id="@+id/button_register_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#4285F4"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:text="Cadastrar Cartão"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <!-- BARRA INFERIOR (bottom_nav) - FIXA NA PARTE INFERIOR -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nav_card"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_home"
+            app:tint="#999999" />
+
+        <ImageView
+            android:id="@+id/nav_card"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nav_transfer"
+            app:layout_constraintStart_toEndOf="@id/nav_home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_card"
+            app:tint="#2E65F3" /> <!-- Indicador de Card selecionado -->
+
+        <ImageView
+            android:id="@+id/nav_transfer"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nav_user"
+            app:layout_constraintStart_toEndOf="@id/nav_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_transfer"
+            app:tint="#999999" />
+
+        <ImageView
+            android:id="@+id/nav_user"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/nav_transfer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person"
+            app:tint="#999999" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

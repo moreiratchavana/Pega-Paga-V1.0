@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Pega-Paga</string>
+    <string name="fingerprint_icon_description">Ícone de Impressão Digital</string>
+    <string name="touch_sensor">Toque no sensor</string>
+    <string name="place_finger_instruction">Coloque seu dedo no sensor para registrar a impressão digital.</string>
+    <string name="register">Cadastrar</string>
+    <string name="registration_successful">Cadastro com sucesso</string>
+    <string name="add_card">Adicionar Cartão</string>
+    <string name="register_card">Cadastrar Cartão</string>
+    <string name="credit_or_debit">Crédito ou Débito</string>
+</resources>

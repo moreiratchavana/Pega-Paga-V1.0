@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "377494495057",
+    "firebase_url": "https://pegapega-b05e6-default-rtdb.firebaseio.com",
+    "project_id": "pegapega-b05e6",
+    "storage_bucket": "pegapega-b05e6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377494495057:android:0407fb00988aee4ce8bd70",
+        "android_client_info": {
+          "package_name": "com.api.pegapaga"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFIYyulXUsqltYQqPF8tI3RC9sGFHzHmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377494495057:android:2700ed3d02bf2983e8bd70",
+        "android_client_info": {
+          "package_name": "com.api.pepapaga"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFIYyulXUsqltYQqPF8tI3RC9sGFHzHmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

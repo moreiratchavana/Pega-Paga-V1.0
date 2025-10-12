@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingTop="24dp"
+    android:id="@+id/transfer_root1"
+    tools:context=".TransferActivity">
+
+
+    <!-- Título Principal (Estilo 'Bem-vindo, Usuário!') -->
+    <TextView
+        android:id="@+id/text_transfer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fazer Transferência"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Subtítulo -->
+    <TextView
+        android:id="@+id/transfer_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Busque um usuário pelo nome ou ID"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/text_transfer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- Barra de Busca -->
+    <EditText
+        android:id="@+id/input_search"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:hint="Buscar usuário..."
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:background="@drawable/edit_text_border"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/transfer_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Definição do background arredondado para a busca (Para ser colocado em res/drawable/rounded_search_background.xml) -->
+    <!--
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <solid android:color="#F5F5F5"/>
+        <corners android:radius="10dp"/>
+    </shape>
+    -->
+
+    <!-- Botões ENVIAR e RECEBER (Estilo da Home) -->
+    <LinearLayout
+        android:id="@+id/action_buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/input_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp">
+
+        <!-- Botão Enviar (Estilo azul arredondado da Home) -->
+        <Button
+            android:id="@+id/buttonsend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enviar"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#4285F4"
+            android:paddingVertical="12dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:cornerRadius="10dp"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Botão Receber (Estilo contorno ou cor clara da Home - 'Solicitar') -->
+        <Button
+            android:id="@+id/buttonreceive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Receber"
+            android:textColor="#4285F4"
+            android:backgroundTint="@android:color/transparent"
+            app:strokeColor="#4285F4"
+            app:strokeWidth="2dp"
+            android:paddingVertical="12dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:cornerRadius="10dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Título da Lista -->
+    <TextView
+        android:id="@+id/recent_users_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Usuários Recentes"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/action_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Exemplo de Item de Usuário (Simulando um resultado) -->
+    <LinearLayout
+        android:id="@+id/item_user"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingVertical="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/recent_users_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <!-- Avatar Placeholder -->
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_person"
+            android:backgroundTint="#CCCCCC"/>
+
+        <!-- Definição do background para o Avatar (Para ser colocado em res/drawable/rounded_avatar_background.xml) -->
+        <!--
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <corners android:radius="24dp"/>
+            <solid android:color="#CCCCCC"/>
+        </shape>
+        -->
+
+        <!-- Informações do Usuário -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="João Silva"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/tv_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: @joaosilva"
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <!-- Seta de Ação -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_person"
+            android:tint="@color/gray"
+            android:contentDescription="Selecionar Usuário"/>
+
+    </LinearLayout>
+
+    <!-- Linha Divisória -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/item_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Outros itens de usuário iriam abaixo, em um RecyclerView/ListView -->
+
+    <!-- Placeholder para o Rodapé de Navegação (mantendo a consistência) -->
+    <!-- Barra inferior -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nav_card"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_home"
+            app:tint="#2E65F3" />
+
+        <ImageView
+            android:id="@+id/nav_card"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nav_transfer"
+            app:layout_constraintStart_toEndOf="@id/nav_home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_card"
+            app:tint="#999999" />
+
+        <ImageView
+            android:id="@+id/nav_transfer"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nav_user"
+            app:layout_constraintStart_toEndOf="@id/nav_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_transfer"
+            app:tint="#999999" />
+
+        <ImageView
+            android:id="@+id/nav_user"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/nav_transfer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person"
+            app:tint="#999999" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- O include acima assume que você tem um arquivo nav_bottom_bar.xml
+         que reproduz a barra de navegação inferior da Home.png, ancorado na parte inferior.
+         Se você estiver usando um componente único, substitua o include pelo seu componente. -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
