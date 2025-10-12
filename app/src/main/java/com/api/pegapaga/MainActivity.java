@@ -20,9 +20,13 @@ import com.api.pegapaga.pos.RequestMoneyPosActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     private Button btnRegisterFingerprint, btnEnviar, btnSolicitar, btnHistorico;
     private TextView tvSaldo;
     private SharedPreferences prefs;
+
+
     private LinearLayout transacoesListContainer;
 
     private ImageView navHome, navCard, navTransfer, navUser;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                                 .putString("usuario_telefone", telefone)
                                 .putFloat("saldo", 0f)
                                 .apply();
+
 
                         if (novoUsuario) {
                             transacoesListContainer.removeAllViews(); // limpa histórico
