@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
     private Button btnRegisterFingerprint, btnEnviar, btnSolicitar, btnHistorico;
     private TextView tvSaldo;
     private SharedPreferences prefs;
