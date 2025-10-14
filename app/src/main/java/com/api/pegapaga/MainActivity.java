@@ -10,11 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import org.paymentsds.mpesa.Client;
-import org.paymentsds.mpesa.Request;
-import org.paymentsds.mpesa.Response;
-import org.paymentsds.mpesa.Callback;
-import org.paymentsds.mpesa.Environment;
+
 
 
 import androidx.activity.EdgeToEdge;
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout transacoesListContainer;
 
-    private ImageView navHome, navCard, navTransfer, navUser;
+    private ImageView navHome, navCard, navTransfer, navUser, imgTopupmoney;
 
     // Launcher para criar novo usuário
     private final ActivityResultLauncher<Intent> createAccountLauncher =
@@ -116,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
         btnEnviar = findViewById(R.id.btn_enviar);
         btnSolicitar = findViewById(R.id.btn_solicitar);
         btnHistorico = findViewById(R.id.btn_historico);
+        imgTopupmoney = findViewById(R.id.topUpmoney);
+
 
         navHome = findViewById(R.id.nav_home);
         navCard = findViewById(R.id.nav_card);
@@ -135,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnHistorico.setOnClickListener(v ->
                 startActivity(new Intent(this, HistoryActivity.class))
+        );
+        imgTopupmoney.setOnClickListener(v ->
+                startActivity(new Intent(this, TopUpActivity.class))
         );
 
         // ----------------- BARRA INFERIOR -----------------
